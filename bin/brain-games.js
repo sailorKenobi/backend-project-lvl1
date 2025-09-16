@@ -3,4 +3,3 @@
 import { welcomeMessage } from '../src/cli.js'
 
 welcomeMessage()
-
