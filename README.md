@@ -1,3 +1,5 @@
+asciinema demo: https://asciinema.org/a/HAbJ7rR15yyRgZqgMir9cSzA2
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/sailorKenobi/backend-project-lvl1/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/sailorKenobi/backend-project-lvl1/actions)
 
