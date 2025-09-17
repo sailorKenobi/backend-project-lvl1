@@ -1,4 +1,5 @@
-import { welcomeMessage, getInput } from './cli.js'
+import { welcomeMessage } from '../cli.js'
+import { askQuestion, getRandomInt } from '../index.js'
 
 export const evenGame = () => {
   const userName = welcomeMessage()
@@ -6,23 +7,15 @@ export const evenGame = () => {
   let rightAnswers = 0
   while (rightAnswers < 3) {
     const randNumber = getRandomInt(50)
-    console.log(`Question: ${randNumber}`)
-    const answer = getInput('Your answer: ')
     const correctAnswer = randNumber % 2 === 0 ? 'yes' : 'no'
-    if (answer == correctAnswer) {
+    if (askQuestion(randNumber, correctAnswer)) {
       rightAnswers++
-      console.log('Correct!')
     }
     else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`)
       console.log(`Let's try again, ${userName}!`)
       break
     }
   }
   if (rightAnswers === 3)
     console.log(`Congratulations, ${userName}`)
-}
-
-const getRandomInt = (max) => {
-  return Math.floor(Math.random() * max)
 }
