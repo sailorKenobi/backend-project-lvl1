@@ -1,4 +1,5 @@
 import { getInput } from './cli.js'
+import { Random } from 'random-js'
 
 export const askQuestion = (question, correctAnswer) => {
   console.log(`Question: ${question}`)
@@ -13,6 +14,7 @@ export const askQuestion = (question, correctAnswer) => {
   }
 }
 
-export const getRandomInt = (max) => {
-  return Math.floor(Math.random() * max)
+export const getRandomInt = (max) => {  
+  const random = new Random()
+  return random.integer(0, max)
 }

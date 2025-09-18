@@ -9,7 +9,7 @@ export const calcGame = () => {
   while (rightAnswers < 3) {
     const randNumber1 = getRandomInt(50)
     const randNumber2 = getRandomInt(50)
-    const randOperation = operations[getRandomInt(3)]
+    const randOperation = operations[getRandomInt(2)]
     const question = (`Question: ${randNumber1} ${randOperation} ${randNumber2}`)
     const correctAnswer = getCalc(randNumber1, randNumber2, randOperation)
     if (askQuestion(question, correctAnswer)) {
