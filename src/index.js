@@ -1,5 +1,24 @@
 import { getInput } from './cli.js'
+import { welcomeMessage } from './cli.js'
 import { Random } from 'random-js'
+
+export const runQuestionsGame = (gameDescription, getQuestion) => {
+  const userName = welcomeMessage()
+  console.log(gameDescription)
+  let rightAnswers = 0
+  while (rightAnswers < 3) {
+    const questionObj = getQuestion()
+    if (askQuestion(questionObj.question, questionObj.answer)) {
+      rightAnswers++
+    }
+    else {
+      console.log(`Let's try again, ${userName}!`)
+      break
+    }
+  }
+  if (rightAnswers === 3)
+    console.log(`Congratulations, ${userName}`)
+}
 
 export const askQuestion = (question, correctAnswer) => {
   console.log(`Question: ${question}`)
@@ -14,7 +33,7 @@ export const askQuestion = (question, correctAnswer) => {
   }
 }
 
-export const getRandomInt = (max) => {  
+export const getRandomInt = (max) => {
   const random = new Random()
   return random.integer(0, max)
 }

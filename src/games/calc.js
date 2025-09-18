@@ -1,27 +1,21 @@
-import { welcomeMessage } from '../cli.js'
-import { askQuestion, getRandomInt } from '../index.js'
+import { runQuestionsGame, getRandomInt } from '../index.js'
+
+const operations = ['+', '-', '*']
 
 export const calcGame = () => {
-  const operations = ['+', '-', '*']
-  const userName = welcomeMessage()
-  console.log('What is the result of the expression?')
-  let rightAnswers = 0
-  while (rightAnswers < 3) {
-    const randNumber1 = getRandomInt(50)
-    const randNumber2 = getRandomInt(50)
-    const randOperation = operations[getRandomInt(2)]
-    const question = (`Question: ${randNumber1} ${randOperation} ${randNumber2}`)
-    const correctAnswer = getCalc(randNumber1, randNumber2, randOperation)
-    if (askQuestion(question, correctAnswer)) {
-      rightAnswers++
-    }
-    else {
-      console.log(`Let's try again, ${userName}!`)
-      break
-    }
+  const gameDescription = 'What is the result of the expression?'
+  runQuestionsGame(gameDescription, calcPlay)
+}
+
+const calcPlay = () => {
+  const randNumber1 = getRandomInt(50)
+  const randNumber2 = getRandomInt(50)
+  const randOperation = operations[getRandomInt(2)]
+  const res = {
+    question: `${randNumber1} ${randOperation} ${randNumber2}`,
+    answer: getCalc(randNumber1, randNumber2, randOperation),
   }
-  if (rightAnswers === 3)
-    console.log(`Congratulations, ${userName}`)
+  return res
 }
 
 const getCalc = (a, b, operation) => {

@@ -1,24 +1,18 @@
-import { welcomeMessage } from '../cli.js'
-import { askQuestion, getRandomInt } from '../index.js'
+import { runQuestionsGame, getRandomInt } from '../index.js'
 
 export const gcdGame = () => {
-  const userName = welcomeMessage()
-  console.log('Find the greatest common divisor of given numbers.')
-  let rightAnswers = 0
-  while (rightAnswers < 3) {
-    const randNumber1 = getRandomInt(50)
-    const randNumber2 = getRandomInt(50)
-    const correctAnswer = calcGcd(randNumber1, randNumber2)
-    if (askQuestion(`${randNumber1} ${randNumber2}`, correctAnswer)) {
-      rightAnswers++
-    }
-    else {
-      console.log(`Let's try again, ${userName}!`)
-      break
-    }
+  const gameDescription = 'Find the greatest common divisor of given numbers.'
+  runQuestionsGame(gameDescription, gcdPlay)
+}
+
+const gcdPlay = () => {
+  const randNumber1 = getRandomInt(50)
+  const randNumber2 = getRandomInt(50)
+  const res = {
+    question: `${randNumber1} ${randNumber2}`,
+    answer: calcGcd(randNumber1, randNumber2),
   }
-  if (rightAnswers === 3)
-    console.log(`Congratulations, ${userName}`)
+  return res
 }
 
 const calcGcd = (a, b) => {
