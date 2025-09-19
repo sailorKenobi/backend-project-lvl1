@@ -1,4 +1,10 @@
 
+Набор из 5 простых консольных игр: целое число (brain-even), калькулятор (brain-calc), наибольший общий делитель (brain-gcd), нахождение элемента прогрессии (brain-progression), простое число (brain-prime).  
+
+Для установки достаточно провести установку пакета командой npm link.  
+
+Для запуска необходимо выполнить команду, соответствующую игре.  
+
 ### asciinema demos:
 even https://asciinema.org/a/HAbJ7rR15yyRgZqgMir9cSzA2  
 calc https://asciinema.org/a/rQEDH6DZjWlTiomjvcYqNG49U  
