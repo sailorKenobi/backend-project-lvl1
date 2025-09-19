@@ -17,7 +17,7 @@ export const runQuestionsGame = (gameDescription, getQuestion) => {
     }
   }
   if (rightAnswers === 3)
-    console.log(`Congratulations, ${userName}`)
+    console.log(`Congratulations, ${userName}!`)
 }
 
 export const askQuestion = (question, correctAnswer) => {
