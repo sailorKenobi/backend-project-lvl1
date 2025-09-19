@@ -35,5 +35,5 @@ export const askQuestion = (question, correctAnswer) => {
 
 export const getRandomInt = (max) => {
   const random = new Random()
-  return random.integer(0, max)
+  return random.integer(1, max)
 }

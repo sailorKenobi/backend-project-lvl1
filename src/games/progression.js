@@ -7,7 +7,7 @@ export const progressionGame = () => {
 
 const progressionPlay = () => {
   const progression = makeProgression(10)
-  const missingIndex = getRandomInt(9)
+  const missingIndex = getRandomInt(10) - 1
   const missingNumber = progression[missingIndex]
   progression[missingIndex] = '..'
   const res = {

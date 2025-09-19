@@ -10,7 +10,7 @@ export const calcGame = () => {
 const calcPlay = () => {
   const randNumber1 = getRandomInt(50)
   const randNumber2 = getRandomInt(50)
-  const randOperation = operations[getRandomInt(2)]
+  const randOperation = operations[getRandomInt(3) - 1]
   const res = {
     question: `${randNumber1} ${randOperation} ${randNumber2}`,
     answer: getCalc(randNumber1, randNumber2, randOperation),
